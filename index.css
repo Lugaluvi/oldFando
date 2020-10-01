@@ -1,0 +1,12 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    background-image: url("images/pexels-pok-rie-982263.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.div-login{
+    max-width: 600px;
+    min-width: 300px;
+    border-radius: 10px;
+}
