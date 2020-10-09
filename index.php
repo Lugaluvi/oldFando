@@ -14,7 +14,7 @@
     <div class="d-flex p-2 bd-highlight">
         <div class="shadow p-3 mb-5 bg-white div-login">
         <h2><b>Faça seu login</b></h2>
-        <h6 id="emailHelp" class="form-text text-muted">Para acessar a sua lista de tarefas.</h6>
+        <h6 id="emailHelp" class="form-text text-muted">Para acessar a sua lista de tarefas,asdasdasd</h6>
         <br>
         <form>
             <div class="form-group">
