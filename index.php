@@ -20,12 +20,12 @@
             <br>
             <form method="POST" action="tela_usr.php">
                 <div class="form-group">
-                    <label for="user-login"><b>E-mail</b></label>
+                    <label for="user_login"><b>E-mail</b></label>
                     <input type="email" class="form-control" name="user_login" aria-describedby="emailHelp" autocomplete="off" placeholder="Insira seu email">
-                    <small id="emailHelp" class="form-text text-muted">Seu e-mail está segura conosco ;)</small>
+                    <small id="emailHelp" class="form-text text-muted">Seu e-mail está seguro conosco ;)</small>
                 </div>
                 <div class="form-group">
-                    <label for="user-password"><b>Senha</b></label>
+                    <label for="user_password"><b>Senha</b></label>
                     <input type="password" class="form-control" name="user_password" placeholder="Insira sua senha">
                 </div>
                 <button type="submit" class="btn btn-success"><b>Continuar</b></button>
