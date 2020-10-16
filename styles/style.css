@@ -1,18 +1,18 @@
-body{
+body {
     font-family: 'Raleway', sans-serif;
-    background-image: url("images/pexels-pok-rie-982263.jpg");
+    background-image: url("../images/fundo_principal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.div-login{
+.div-login {
     max-width: 600px;
     min-width: 300px;
     border-radius: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
-/*
-.div-conteiner_log{
-    flex
+.div-home {
+    background-color: white;
 }
-*/
