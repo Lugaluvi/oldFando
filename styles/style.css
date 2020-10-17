@@ -1,16 +1,13 @@
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-image: url("../images/teste1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .div-login {
-    max-width: 600px;
-    min-width: 300px;
     border-radius: 10px;
     background-color: white;
-    /*margin: 150px 250px 150px 520px;*/
 }
 
 .div-home {
@@ -18,3 +15,9 @@ body {
     border-radius: 10px;
     margin: 20px;
 }
+
+@media screen and (min-width: 728px) {
+    .div-login, .div-presentation {
+      margin: 0px 400px 0px 400px;
+    }
+  }

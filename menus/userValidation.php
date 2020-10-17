@@ -5,7 +5,6 @@
     $password = $_POST['user_password'];
 
     if ($login == "teste@teste.com" && $password == "teste") {
-        echo"<script>alert('Login realizado com sucesso!');</script>";
         echo"<script>window.location='home.php'</script>";
     } else {
         echo"<script>alert('Login Inválido. Por favor, verifique seus dados.');</script>";

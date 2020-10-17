@@ -7,40 +7,40 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="shortcut icon" href="images/check-solid.svg">
 </head>
 <body>
-	<div class="container mt-3">
-		<div class="d-flex justify-content-center mb-3">
-			<table>
-				<tr>
-					<td>
-						<!-- Outras Infos -->
-					</td>
-					<td>
-					<div class="d-flex">
-							<div class="shadow p-3 div-login">
-								<h2><b>Faça seu login</b></h2>
-								<h6 id="emailHelp" class="form-text text-muted">Para acessar a sua lista de tarefas.</h6>
-								<br>
-								<form method="POST" action="menus/userValidation.php">
-										<div class="form-group">
-												<label for="user_login"><b>E-mail</b></label>
-												<input type="email" class="form-control" name="user_login" aria-describedby="emailHelp" autocomplete="off" placeholder="Insira seu email">
-										</div>
-										<div class="form-group">
-												<label for="user_password"><b>Senha</b></label>
-												<input type="password" class="form-control" name="user_password" placeholder="Insira sua senha">
-												<small id="emailHelp" class="form-text text-muted">Suas informações estão seguras conosco.</small>
-										</div>
-										<button type="submit" class="btn btn-dark">Continuar</button>
-								</form>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</table> 
-		</div>
+	<br>
+	<div class="shadow p-4 mb-3 div-home div-presentation">
+		</p>
+		<p><i class="fad fa-check fa-3x"></i></p>
+		<h2><b>Boas-vindas ao Fando.</b></h2>
+		<h6 class="form-text text-muted">Seu organizador de tarefas prático e rápido.</h6>
+		</p>
+		<h6 class="text-muted font-weight-light">O Fando foi criado para permitir que você consiga organizar seu dia de forma simples e prática. <br><br>Crie cards para suas tarefas, defina prioridades e tenha uma rotina mais organizada!</h6>
 	</div>
+	<div class="shadow p-4 mb-5 div-home div-login">
+		</p>
+		<p><i class="fad fa-sign-in-alt fa-3x"></i></p> 
+		<h2><b>Faça seu login</b></h2>
+		<h6 class="form-text text-muted">Para acessar sua lista de tarefas.</h6>
+		<br>
+		<form method="POST" action="menus/userValidation.php">
+			<div class="form-group">
+					<label for="user_login"><b>E-mail</b></label>
+					<input type="email" class="form-control" name="user_login" placeholder="Insira seu email">
+			</div>
+			<div class="form-group">
+					<label for="user_password"><b>Senha</b></label>
+					<input type="password" class="form-control" name="user_password" placeholder="Insira sua senha">
+					<small class="form-text text-muted">Suas informações estão seguras conosco.</small>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-dark">Continuar</button>
+			</div>
+		</form>
+  </div>
 </html>
