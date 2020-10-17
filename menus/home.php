@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-
 <body>
-    <div class="d-flex p-2 bd-highlight div-home">
-        <h3><b>Logadinho!</b></h3>
+    <div class="shadow p-3 mb-5 div-home">
+        <h4><b>Um dia isso vai ser uma tela inicial.</b></h4>
+        <h6 class="text-muted font-weight-light"><b>Bem bonita tá.</b></h6>
     </div>
 </html>

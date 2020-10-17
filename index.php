@@ -11,23 +11,36 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="d-flex p-2 bd-highlight div-conteiner_log">
-        <div class="shadow p-3 mb-5 bg-white div-login">
-            <h2><b>Faça seu login</b></h2>
-            <h6 id="emailHelp" class="form-text text-muted">Para acessar a sua lista de tarefas.</h6>
-            <br>
-            <form method="POST" action="menus/userValidation.php">
-                <div class="form-group">
-                    <label for="user_login"><b>E-mail</b></label>
-                    <input type="email" class="form-control" name="user_login" aria-describedby="emailHelp" autocomplete="off" placeholder="Insira seu email">
-                </div>
-                <div class="form-group">
-                    <label for="user_password"><b>Senha</b></label>
-                    <input type="password" class="form-control" name="user_password" placeholder="Insira sua senha">
-                    <small id="emailHelp" class="form-text text-muted">Suas informações estão seguras conosco.</small>
-                </div>
-                <button type="submit" class="btn btn-success"><b>Continuar</b></button>
-            </form>
-        </div>
-    </div>
+	<div class="container mt-3">
+		<div class="d-flex justify-content-center mb-3">
+			<table>
+				<tr>
+					<td>
+						<!-- Outras Infos -->
+					</td>
+					<td>
+					<div class="d-flex">
+							<div class="shadow p-3 div-login">
+								<h2><b>Faça seu login</b></h2>
+								<h6 id="emailHelp" class="form-text text-muted">Para acessar a sua lista de tarefas.</h6>
+								<br>
+								<form method="POST" action="menus/userValidation.php">
+										<div class="form-group">
+												<label for="user_login"><b>E-mail</b></label>
+												<input type="email" class="form-control" name="user_login" aria-describedby="emailHelp" autocomplete="off" placeholder="Insira seu email">
+										</div>
+										<div class="form-group">
+												<label for="user_password"><b>Senha</b></label>
+												<input type="password" class="form-control" name="user_password" placeholder="Insira sua senha">
+												<small id="emailHelp" class="form-text text-muted">Suas informações estão seguras conosco.</small>
+										</div>
+										<button type="submit" class="btn btn-dark">Continuar</button>
+								</form>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table> 
+		</div>
+	</div>
 </html>

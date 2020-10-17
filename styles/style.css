@@ -1,6 +1,6 @@
 body {
     font-family: 'Raleway', sans-serif;
-    background-image: url("../images/fundo_principal.jpg");
+    background-image: url("../images/teste1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -9,10 +9,12 @@ body {
     max-width: 600px;
     min-width: 300px;
     border-radius: 10px;
-    align-items: center;
-    justify-content: center;
+    background-color: white;
+    /*margin: 150px 250px 150px 520px;*/
 }
 
 .div-home {
     background-color: white;
+    border-radius: 10px;
+    margin: 20px;
 }
