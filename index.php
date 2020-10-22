@@ -22,25 +22,65 @@
 		</p>
 		<h6 class="text-muted font-weight-light">O Fando foi criado para permitir que você consiga organizar seu dia de forma simples e prática. <br><br>Crie cards para suas tarefas, defina prioridades e tenha uma rotina mais organizada!</h6>
 	</div>
-	<div class="shadow p-4 mb-5 div-home div-login">
+	<div class="shadow p-4 mb-3 div-home div-login">
 		</p>
-		<p><i class="fad fa-sign-in-alt fa-3x"></i></p> 
+		<p><i class="fad fa-sign-in fa-3x"></i></p> 
 		<h2><b>Faça seu login</b></h2>
 		<h6 class="form-text text-muted">Para acessar sua lista de tarefas.</h6>
 		<br>
 		<form method="POST" action="menus/userValidation.php">
 			<div class="form-group">
-					<label for="user_login"><b>E-mail</b></label>
-					<input type="email" class="form-control" name="user_login" placeholder="Insira seu email">
+					<label for="user_login"><b>E-mail</b></label><br>
+					<input type="email" name="user_login" placeholder="Insira seu email">
 			</div>
 			<div class="form-group">
 					<label for="user_password"><b>Senha</b></label>
-					<input type="password" class="form-control" name="user_password" placeholder="Insira sua senha">
+					<input type="password" name="user_password" placeholder="Insira sua senha">
 					<small class="form-text text-muted">Suas informações estão seguras conosco.</small>
 			</div>
 			<div class="text-center">
-				<button type="submit" class="btn btn-dark">Continuar</button>
+				<button type="submit">Continuar</button>
 			</div>
 		</form>
-  </div>
+  	</div>
+	<div class="shadow p-4 mb-3 div-home div-login">
+		</p>
+		<p><i class="fad fa-user-edit fa-3x"></i></p> 
+		<h2><b>Cadastre-se</b></h2>
+		<h6 class="form-text text-muted">Comece a organizar o seu dia agora mesmo!</h6>
+		<br>
+		<form method="POST" action="menus/userValidation.php">
+			<div class="form-row">
+				<div class="col">
+					<label for="user_name"><b>Nome</b></label>
+					<input type="text" name="user_name" placeholder="Insira seu nome">
+				</div>
+				<div class="col">
+					<label for="user_lastname"><b>Sobrenome</b></label>
+					<input type="text" name="user_lastname" placeholder="Insira seu sobrenome">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+					<label for="user_email"><b>E-mail</b></label>
+					<input type="email" name="user_email" placeholder="Insira seu email">
+					<small class="form-text text-muted">Não enviamos spams.</small>
+			</div>
+			<div class="form-group">
+					<label for="user_password"><b>Senha</b></label>
+					<input type="password" name="user_password" placeholder="Insira sua senha">
+			</div>
+			<div class="text-center">
+				<button type="submit" style="background-color: #F6830F;">Cadastrar</button>
+			</div>
+		</form>
+	</div>
+	<div class="shadow p-4 mb-3 div-home div-presentation">
+		</p>
+		
+		<h2><b>Sobre o Fando</b></h2>
+		</p>
+		<p><h6 class="text-muted font-weight-light">O Fando foi criado como projeto da disciplina de PAC (Projeto de Atividade Colaborativa) do Centro Universitário Católica de Santa Catarina.</h6></p>
+		<h6>2020, todos os direitos reservados | Desenvolvido por <a href="https://www.google.com/">Quack</a></h6>
+	</div>
 </html>
