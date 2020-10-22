@@ -6,11 +6,6 @@ body {
     background-attachment: fixed;
 }
 
-.div-login {
-    border-radius: 10px;
-    background-color: white;
-}
-
 .div-home {
     background-color: white;
     border-radius: 10px;
@@ -18,8 +13,23 @@ body {
 }
 
 @media screen and (min-width: 728px) {
-    .div-login, .div-presentation {
-      margin: 0px 400px 0px 400px;
+    body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: flex-start;
+        margin: 0px 100px 0px 100px;
+    }
+
+    .div-home {
+        max-width: 600px;
+    }
+
+    .div-info {
+        position: sticky;
+        top: 0;
     }
 }
 
@@ -40,4 +50,14 @@ button[type=submit] {
     color: white;
     border: 1px solid white;
     border-radius: 5px;
+}
+
+input:hover {
+    transition: all ease-in-out .15s;
+    border: 1px solid black;
+}
+
+button:hover {
+    transition: all ease-in-out .15s;
+    background-color: #101010;
 }
