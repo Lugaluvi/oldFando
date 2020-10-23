@@ -11,8 +11,12 @@
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="shortcut icon" href="images/check-solid.svg">
+	<?php 
+		$rand = (string) rand(1,6);
+		$image_rand = "images/fundo".$rand.".jpg";
+	?>
 </head>
-<body>
+<body style="background-image: url('<?php echo $image_rand?>');">
 	<br>
 	<div class="div-info">
 		<div class="shadow p-4 mb-3 div-home">
@@ -27,9 +31,10 @@
 			</p>
 			<p><i class="fad fa-question fa-3x"></i></p>
 			<h2><b>Sobre o Fando</b></h2>
+			<h6 class="form-text text-muted">Nós viemos em paz. 👽</h6>
 			</p>
-			<p><h6 class="text-muted font-weight-light">O Fando foi criado como projeto da disciplina de PAC (Projeto de Atividade Colaborativa) do Centro Universitário Católica de Santa Catarina.</h6></p>
-			<h6>2020 Católica SC | Desenvolvido por <a href="https://www.google.com/">Quack</a></h6>
+			<p><h6 class="text-muted font-weight-light">O Fando foi criado como projeto da disciplina de PAC para o Centro Universitário Católica de Santa Catarina.</h6></p>
+			<h6>2020 Católica SC | Desenvolvido por <a href="http://quack.epizy.com/">Quack</a></h6>
 		</div>
 	</div>
 
@@ -72,7 +77,7 @@
 						<input type="text" name="user_lastname" placeholder="Insira seu sobrenome">
 					</div>
 				</div>
-				<br>
+				<br> 
 				<div class="form-group">
 						<label for="user_email"><b>E-mail</b></label>
 						<input type="email" name="user_email" placeholder="Insira seu email">
