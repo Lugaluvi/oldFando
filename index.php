@@ -27,7 +27,7 @@
 			</p>
 			<h6 class="text-muted font-weight-light">O Fando foi criado para permitir que você consiga organizar seu dia de forma simples e prática. <br><br>Crie cards para suas tarefas, defina prioridades e tenha uma rotina mais organizada!</h6>
 		</div>
-		<div class="shadow p-4 mb-3 div-home">
+		<div class="shadow p-4 mb-2 div-home">
 			</p>
 			<p><i class="fad fa-question fa-3x"></i></p>
 			<h2><b>Sobre o Fando</b></h2>
@@ -37,7 +37,6 @@
 			<h6>2020 Católica SC | Desenvolvido por <a href="http://quack.epizy.com/">Quack</a></h6>
 		</div>
 	</div>
-
 	<div>
 		<div class="shadow p-4 mb-3 div-home">
 			</p>
@@ -66,26 +65,26 @@
 			<h2><b>Cadastre-se</b></h2>
 			<h6 class="form-text text-muted">Comece a organizar o seu dia agora mesmo!</h6>
 			<br>
-			<form method="POST" action="menus/userValidation.php">
+			<form method="POST" action="menus/userInclude.php">
 				<div class="form-row">
 					<div class="col">
 						<label for="user_name"><b>Nome</b></label>
-						<input type="text" name="user_name" placeholder="Insira seu nome">
+						<input type="text" name="user_name" placeholder="Insira seu nome" maxlength="100" required>
 					</div>
 					<div class="col">
 						<label for="user_lastname"><b>Sobrenome</b></label>
-						<input type="text" name="user_lastname" placeholder="Insira seu sobrenome">
+						<input type="text" name="user_lastname" placeholder="Insira seu sobrenome" maxlength="100" required>
 					</div>
 				</div>
 				<br> 
 				<div class="form-group">
 						<label for="user_email"><b>E-mail</b></label>
-						<input type="email" name="user_email" placeholder="Insira seu email">
+						<input type="email" name="user_email" placeholder="Insira seu email" maxlength="150" required>
 						<small class="form-text text-muted">Não enviamos spams.</small>
 				</div>
 				<div class="form-group">
 						<label for="user_password"><b>Senha</b></label>
-						<input type="password" name="user_password" placeholder="Insira sua senha">
+						<input type="password" name="user_password" placeholder="Insira sua senha" maxlength="50" required>
 				</div>
 				<div class="text-center">
 					<button type="submit">Cadastrar</button>
