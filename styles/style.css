@@ -11,6 +11,10 @@ body {
     margin: 20px;
 }
 
+.div-tasks {
+    width: 800px;
+}
+
 @media screen and (min-width: 728px) {
     body {
         display: flex;
