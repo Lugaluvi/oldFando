@@ -11,12 +11,12 @@
     $userResult = mysqli_query($conexao, $queryResult);
         
     if(mysqli_num_rows ($userResult) > 0 ){ 
-        $reg_usuario = mysqli_fetch_array($userResult);
+        $reg_user = mysqli_fetch_array($userResult);
                 
         $_SESSION['email']  = $email; 
         $_SESSION['password']  = $password; 
-        $_SESSION['name'] = $reg_usuario["userName"];
-        $_SESSION['lastname'] = $reg_usuario["userLastname"];
+        $_SESSION['name'] = $reg_user["userName"];
+        $_SESSION['lastname'] = $reg_user["userLastname"];
         
         echo $_SESSION['email'];
         echo $_SESSION['name'];

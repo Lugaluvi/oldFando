@@ -11,8 +11,13 @@ body {
     margin: 20px;
 }
 
-.div-tasks {
-    width: 800px;
+.div-opts-task {
+    /* display: none; */
+}
+
+.div-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 728px) {
@@ -34,6 +39,14 @@ body {
         position: sticky;
         top: 0;
     }
+    
+    .div-tasks {
+        width: 600px;
+    }
+
+    .btn-create-task {
+        width: 400px;
+    }
 }
 
 input {
@@ -45,14 +58,29 @@ input {
     border-radius: 5px;
 }
 
-button[type=submit] {
+button {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #262626;
     color: white;
     border: 1px solid white;
     border-radius: 5px;
+}
+
+button[type=submit] {
+    background-color: #262626;
+}
+
+.btn-first {
+    background-color: #318fb5;
+}
+
+.btn-second {
+    background-color: #ec524b;
+}
+
+.btn-create-task {
+    background-color: #262626;
 }
 
 input:hover {
@@ -60,7 +88,22 @@ input:hover {
     border: 1px solid black;
 }
 
-button:hover {
+button[type=submit]:hover {
     transition: all ease-in-out .15s;
     background-color: #101010;
+}
+
+.btn-first:hover {
+    transition: all ease-in-out .15s;
+    background-color: #226079;
+}
+
+.btn-second:hover {
+    transition: all ease-in-out .15s;
+    background-color: #7e2b2b;
+}
+
+.btn-create-task:hover {
+    transition: all ease-in-out .15s;
+    background-color: black;
 }
