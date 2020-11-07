@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/style.css">
 	<link rel="shortcut icon" href="images/check-solid.svg">
 	<?php 
 		$rand = (string) rand(1,6);
@@ -34,7 +34,7 @@
 			<h6 class="form-text text-muted">Nós viemos em paz. 👽</h6>
 			</p>
 			<p><h6 class="text-muted font-weight-light">O Fando foi criado como projeto da disciplina de PAC para o Centro Universitário Católica de Santa Catarina.</h6></p>
-			<h6>2020 Católica SC | Desenvolvido por <a href="http://quack.epizy.com/">Quack</a></h6>
+			<h6>2020 <a href="http://www.catolicasc.org.br/">Católica SC</a> | Desenvolvido por <a href="http://quack.epizy.com/">Quack</a></h6>
 		</div>
 	</div>
 	<div>

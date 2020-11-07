@@ -9,16 +9,25 @@ body {
     background-color: white;
     border-radius: 10px;
     margin: 20px;
+
+    /*
+    MODO DARK DO ERIK
+    
+    background-color: #262626;
+    color: #FFF;
+    */
 }
 
-.div-opts-task {
-    /* display: none; */
+.div-opts-task, .user-opt {
+    display: none;
 }
 
 .div-header {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
 }
+
+
 
 @media screen and (min-width: 728px) {
     body {
@@ -45,7 +54,7 @@ body {
     }
 
     .btn-create-task {
-        width: 400px;
+        width: 405px;
     }
 }
 
@@ -72,11 +81,17 @@ button[type=submit] {
 }
 
 .btn-first {
-    background-color: #318fb5;
+    background-color: #FFF;
+    border: 2px solid;
+    border-color: #318fb5;
+    color: #318fb5;
 }
 
 .btn-second {
-    background-color: #ec524b;
+    background-color: rgb(253, 253, 253);
+    border: 2px solid;
+    border-color: #ec524b;
+    color: #ec524b;
 }
 
 .btn-create-task {
@@ -89,21 +104,23 @@ input:hover {
 }
 
 button[type=submit]:hover {
-    transition: all ease-in-out .15s;
+    transition: all ease-in-out .20s;
     background-color: #101010;
 }
 
 .btn-first:hover {
-    transition: all ease-in-out .15s;
-    background-color: #226079;
+    transition: all ease-in-out .20s;
+    background-color: #318fb5;
+    color: #FFF;
 }
 
 .btn-second:hover {
-    transition: all ease-in-out .15s;
-    background-color: #7e2b2b;
+    transition: all ease-in-out .20s;
+    background-color: #ec524b;
+    color: #FFF;
 }
 
 .btn-create-task:hover {
-    transition: all ease-in-out .15s;
+    transition: all ease-in-out .20s;
     background-color: black;
 }
