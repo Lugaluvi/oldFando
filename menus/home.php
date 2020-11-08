@@ -14,33 +14,16 @@
 		$name = $_SESSION['name'];
 		$lastName = $_SESSION['lastname'];
 	?>
-	<script>
-		function openDiv(el) {
-			var display = document.getElementById(el).style.display;
-			if(display == "none")
-				document.getElementById(el).style.display = 'block';
-			else
-				document.getElementById(el).style.display = 'none';
-		}
-
-		function changeColor(el) {
-			var color = document.getElementById(el).style.backgroundColor;
-			if(color == '#FFFFFF')
-				document.getElementById("myDIV").style.backgroundColor = '#262626';
-			else
-				document.getElementById("myDIV").style.backgroundColor = '#FFFFFF';
-		}
-	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Minhas Tarefas | Fando</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/styles.css">
 	<link rel="shortcut icon" href="../images/check-solid.svg">
 	<?php
 		$rand = (string) rand(1, 6);
@@ -51,7 +34,7 @@
 <body style="background-image: url('<?php echo $image_rand ?>');">
 	<br>
 	<div class="div-info">
-		<div class="shadow p-4 mb-3 div-home" id="myDIV">
+		<div class="shadow p-4 mb-3 div-home div-dark-mode">
 			</p>
 			<p><i class="fad fa-check fa-3x"></i></p>
 			<h2><b>Olá, <?php echo $name, " ", $lastName; ?></b></h2>
@@ -59,67 +42,95 @@
 			<br>
 			<div class="div-header">
 				<h5><b>Opções de conta<b></h5>
-				<a onclick="openDiv('user-opt')"><i class="fas fa-angle-down fa-2x"></i></a>
+				<a id="btn-open-user"><i class="fas fa-angle-down fa-2x angle-user"></i></a>
 			</div>
 			<div class="user-opt" id="user-opt">
 				<br>
 				<div class="custom-control custom-switch">
-					<input type="checkbox" class="custom-control-input" id="color-switch" onclick="changeColor('myDIV')">
+					<input type="checkbox" class="custom-control-input" id="color-switch">
 					<label class="custom-control-label font-weight-normal" for="color-switch">Modo Escuro</label>
+					<script type="text/javascript">
+						$('#color-switch').on('click', function() {
+							$(".div-dark-mode").toggleClass('dark-mode');
+							$(".btn-dark-first").toggleClass('dark-first');
+							$(".btn-dark-second").toggleClass('dark-second');
+							$(".btn-dark-third").toggleClass('dark-third');
+							$("hr").toggleClass('dark-hr');
+						});
+					</script>
 				</div>
 				<hr>
 				<div class="text-center">
 					<div class="form-row text-center">
 						<div class="col">
-							<button class="btn-first" type="button">&nbsp&nbsp<i class="fad fa-user-edit"></i> &nbspEditar conta&nbsp</button>
+							<button class="btn-first btn-dark-first" type="button">&nbsp&nbsp<i class="fad fa-user-edit"></i> &nbspEditar conta&nbsp</button>
 						</div>
 						<div class="col">
-							<button class="btn-second" type="button"><i class="fad fa-sign-out"></i> &nbspEncerrar Sessão</button>
+							<button class="btn-second btn-dark-second" type="button"><i class="fad fa-sign-out"></i> &nbspEncerrar Sessão</button>
 						</div>
 					</div>
 				</div>
+				<script type="text/javascript">
+					$('#btn-open-user').on('click', function() {
+						$('#user-opt').slideToggle('fast');
+						$(".angle-user").toggleClass('flip');
+					});
+				</script>
 			</div>	
 		</div>
-		<div class="shadow p-4 mb-2 div-home">
+		<div class="shadow p-4 mb-2 div-home div-dark-mode">
 			</p>
 			<h3><b>Painel de Controle</b></h3>
 			<h6 class="form-text text-muted">Gerencie suas tarefas.</h6>
 			<button class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
 			<div class="form-row text-center">
 				<div class="col">
-					<button class="btn-first" type="button"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
+					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
 				</div>
 				<div class="col">
-					<button class="btn-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar todas</button>
+					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar todas</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div>
-		<div class="shadow p-4 mb-3 div-home div-tasks">
-			</p>
+	<div class="shadow p-4 mb-3 div-home div-tasks div-dark-mode">
+		<p>
 			<div class="div-header">
 				<i class="fad fa-tasks fa-2x"></i>
-				<a onclick="openDiv('div-opts-task')"><i class="fas fa-angle-down fa-2x"></i></a>
+				<a id="btn-open-task"><i class="fas fa-angle-down fa-2x angle-task"></i></a>
 			</div>
-			<div class="div-opts-task" id="div-opts-task">
-				<hr>
-				<div class="form-row text-center">
-					<div class="col">
-						<button class="btn-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
-					</div>
-					<div class="col">
-						<button class="btn-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
-					</div>
+		</p>
+		<div class="div-header">
+			<div class="task-important"></div>
+		</div>
+		<div class="div-opts-task" id="div-opts-task">
+			<br>
+			<h6 class="text-muted font-weight-light">Criada em 99/09/9999 às 00:00</h6>
+			<div class="form-row text-center">
+				<div class="col">
+					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
+				</div>
+				<div class="col">
+					<button class="btn-third btn-dark-third" type="button"><i class="fad fa-eye"></i> &nbspExpandir</button>
+				</div>
+				<div class="col">
+					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
 				</div>
 			</div>
-			</p>
-			<h3><b>Título da Tarefa</b></h3>
-			<h6 class="form-text text-muted">Subtítulo</h6>
-			<p>
-				<h6 class="text-muted font-weight-light">Descrição da tarefa.</h6>
-			</p>
+			<script type="text/javascript">
+				$('#btn-open-task').on('click', function() {
+					$('#div-opts-task').slideToggle('fast');
+					$(".angle-task").toggleClass('flip');
+				});
+			</script>
+			<hr>
 		</div>
+		</p>
+		<h3><b>Título da Tarefa</b></h3>
+		<p>
+			<h6 class="text-muted font-weight-light">Descrição da tarefa.</h6>
+			<h6 class="text-muted font-weight-normal">Em 99/09/9999 - 00:00 até 99:00</h6>
+		</p>
 	</div>
 </body>
 
