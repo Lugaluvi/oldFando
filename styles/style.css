@@ -161,15 +161,17 @@ button[type=submit]:hover {
     opacity: 0.5;
 }
 
-.btn-create-task {
+.dark-create-task {
     background-color: #262626;
     border: 2px solid;
     border-color: #FFF;
     color: #FFF;
 }
 
-.btn-create-task:hover {
-    background-color: #343434;
+.dark-create-task:hover {
+    transition: all ease-in-out .20s;
+    background-color: #FFF;
+    color: #262626;
 }
 
 .dark-first {
@@ -209,6 +211,5 @@ button[type=submit]:hover {
 .dark-third:hover {
     transition: all ease-in-out .20s;
     background-color: #FFF;
-    border-color: #262626;
     color: #262626;
 }
