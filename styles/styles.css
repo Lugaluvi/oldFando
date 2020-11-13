@@ -80,15 +80,12 @@ button {
     border-radius: 5px;
 }
 
-button[type=submit] {
-    background-color: #262626;
-}
 
 .task-important {
     background-color: #bb2205;
     border-radius: 100px;
-    width: 70px;
-    height: 15px;
+    width: 60px;
+    height: 10px;
 }
 
 .btn-first {
@@ -114,6 +111,11 @@ button[type=submit] {
 
 .btn-create-task {
     background-color: #262626;
+}
+
+.btn-goBack {
+    background-color: #B6B5B5;
+    color: #000;
 }
 
 input:hover {
@@ -161,15 +163,17 @@ button[type=submit]:hover {
     opacity: 0.5;
 }
 
-.btn-create-task {
+.dark-create-task {
     background-color: #262626;
     border: 2px solid;
     border-color: #FFF;
     color: #FFF;
 }
 
-.btn-create-task:hover {
-    background-color: #343434;
+.dark-create-task:hover {
+    transition: all ease-in-out .20s;
+    background-color: #FFF;
+    color: #262626;
 }
 
 .dark-first {
@@ -209,6 +213,5 @@ button[type=submit]:hover {
 .dark-third:hover {
     transition: all ease-in-out .20s;
     background-color: #FFF;
-    border-color: #262626;
     color: #262626;
 }

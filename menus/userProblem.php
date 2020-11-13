@@ -38,6 +38,5 @@
         <h2><b>Falha ao cadastrar.</b></h2>
         <h6 class="form-text text-muted">Verifique seus dados e tente novamente.</h6>
         <button type="submit">Voltar</button>
-    </form>
-    
+    </form>  
 </html>

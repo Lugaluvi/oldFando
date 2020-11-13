@@ -36,7 +36,7 @@
             color: #FFF;
         }
 
-        button[type=submit] {
+        button {
             padding: 12px 40px 12px 40px;
             margin: 8px 0;
             border: 1px solid white;
@@ -50,12 +50,9 @@
     </style>
 </head>
 <body>
-    <form action="endSession.php">
-        <br><br><br><br>
-        <p><i class="fad fa-door-open fa-4x"></i></p> 
-        <h2><b>Deseja mesmo sair?</b></h2>
-        <br>
-        <button class="btn-goBack" type="submit">Voltar</button>&nbsp&nbsp
-        <button class="btn-exit" type="submit">Sair</button>
-    </form>
+    <br><br><br><br>
+    <p><i class="fad fa-door-open fa-4x"></i></p> 
+    <h2><b>Deseja mesmo sair?</b></h2>
+    <button onclick="window.location.href='home.php'" class="btn-goBack">Voltar</button>&nbsp&nbsp
+    <button onclick="window.location.href='endSession.php'" class="btn-exit" type="submit">Sair</button>
 </html>

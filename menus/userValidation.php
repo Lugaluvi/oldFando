@@ -2,7 +2,8 @@
 
 <?php
     session_start();
-    $email = $_POST['user_login'];
+    
+    $email = $_POST['user_email'];
     $password = $_POST['user_password'];
     
     include '../conexao.php';
@@ -10,7 +11,7 @@
     $queryResult = "SELECT * FROM users WHERE userEmail = '$email' and userPassword = '$password'";
     $userResult = mysqli_query($conexao, $queryResult);
         
-    if(mysqli_num_rows ($userResult) > 0 ){ 
+    if(mysqli_num_rows ($userResult) > 0 ) { 
         $reg_user = mysqli_fetch_array($userResult);
                 
         $_SESSION['email']  = $email; 

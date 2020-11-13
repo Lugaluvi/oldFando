@@ -87,8 +87,8 @@ button[type=submit] {
 .task-important {
     background-color: #bb2205;
     border-radius: 100px;
-    width: 70px;
-    height: 15px;
+    width: 60px;
+    height: 10px;
 }
 
 .btn-first {
@@ -114,6 +114,11 @@ button[type=submit] {
 
 .btn-create-task {
     background-color: #262626;
+}
+
+.btn-goBack {
+    background-color: #B6B5B5;
+    color: #000;
 }
 
 input:hover {

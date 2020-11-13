@@ -46,8 +46,8 @@
 			<br>
 			<form method="POST" action="menus/userValidation.php">
 				<div class="form-group">
-						<label for="user_login"><b>E-mail</b></label><br>
-						<input type="email" name="user_login" placeholder="Insira seu email">
+						<label for="user_email"><b>E-mail</b></label><br>
+						<input type="email" name="user_email" placeholder="Insira seu email">
 				</div>
 				<div class="form-group">
 						<label for="user_password"><b>Senha</b></label>
