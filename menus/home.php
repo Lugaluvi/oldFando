@@ -22,7 +22,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<link rel="stylesheet" href="../styles/style.css">
+	<link rel="stylesheet" href="../styles/stylex.css">
 	<link rel="shortcut icon" href="../images/check-solid.svg">
 	<?php
 		$rand = (string) rand(1, 6);
@@ -130,7 +130,6 @@
 		</p>
 		<h4><b>Título da Tarefa</b></h4>
 		<p>
-			<!-- <h6 class="text-muted font-weight-light">Descrição da tarefa.</h6> -->
 			<h6 class="text-muted font-weight-normal">Em 99/09/9999 - 00:00 até 99:00</h6>
 		</p>
 	</div>
