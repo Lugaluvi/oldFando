@@ -133,12 +133,6 @@
 					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
 				</div>
 			</div>
-			<script type="text/javascript">
-				$('#btn-open-task').on('click', function() {
-					$('#div-opts-task').slideToggle('fast');
-					$(".angle-task").toggleClass('flip');
-				});
-			</script>
 			<hr>
 		</div>
 		</p>
@@ -149,6 +143,12 @@
 	</div>
 	<?php 
         }
-    ?>
+	?>
+	<script type="text/javascript">
+		$('#btn-open-task').on('click', function() {
+			$('#div-opts-task').slideToggle('fast');
+			$(".angle-task").toggleClass('flip');
+		});
+	</script>
 </body>
 </html>
