@@ -47,11 +47,11 @@
 			<form method="POST" action="menus/userValidation.php">
 				<div class="form-group">
 						<label for="user_email"><b>E-mail</b></label><br>
-						<input type="email" name="user_email" placeholder="Insira seu email">
+						<input type="email" name="user_email" placeholder="Insira seu email" required>
 				</div>
 				<div class="form-group">
 						<label for="user_password"><b>Senha</b></label>
-						<input type="password" name="user_password" placeholder="Insira sua senha">
+						<input type="password" name="user_password" placeholder="Insira sua senha" minlength="6" required>
 						<small class="form-text text-muted">Suas informações estão seguras conosco.</small>
 				</div>
 				<div class="text-center">
@@ -84,7 +84,7 @@
 				</div>
 				<div class="form-group">
 						<label for="user_password"><b>Senha</b></label>
-						<input type="password" name="user_password" placeholder="Insira sua senha" maxlength="50" required>
+						<input type="password" name="user_password" placeholder="Insira sua senha" minlength="6" maxlength="150" required>
 				</div>
 				<div class="text-center">
 					<button type="submit">Cadastrar</button>
