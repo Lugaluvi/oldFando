@@ -12,6 +12,7 @@
 		$email = $_SESSION['email'];
 		$name = $_SESSION['name'];
 		$lastName = $_SESSION['lastname'];
+		$key = $_SESSION['key'];
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,6 +28,10 @@
 	<?php
 		$rand = (string) rand(1, 6);
 		$image_rand = "../images/fundo" . $rand . ".jpg";
+
+		include '../conexao.php';
+		$tasks = "select * from tabela_$key";
+		$query_tasks = mysqli_query($conexao, $tasks);
 	?>
 </head>
 
@@ -95,6 +100,15 @@
 			</div>
 		</div>
 	</div>
+	<?php
+		while ($user_tasks = mysqli_fetch_array($query_tasks)) {
+			$task_name = $user_tasks["taskName"];
+			$task_desc = $user_tasks["taskDesc"];
+			$task_createDate = $user_tasks["taskCreateDate"];
+			$task_date = $user_tasks["taskDate"];
+			$task_important = $user_tasks["isImportant"];
+			$task_icon = $user_tasks["taskIcon"];
+    ?>
 	<div class="shadow p-4 mb-3 div-home div-tasks div-dark-mode">
 		<p>
 			<div class="div-header">
@@ -107,7 +121,7 @@
 		</div>
 		<div class="div-opts-task" id="div-opts-task">
 			<br>
-			<h6 class="text-muted font-weight-light">Criada em 99/09/9999 às 00:00</h6>
+			<h6 class="text-muted font-weight-light">Criada em <?php echo $task_createDate ?> </h6> <!-- 99/09/9999 às 00:00 -->
 			<div class="form-row text-center">
 				<div class="col">
 					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
@@ -128,10 +142,13 @@
 			<hr>
 		</div>
 		</p>
-		<h4><b>Título da Tarefa</b></h4>
+		<h4><b><?php echo $task_name ?></b></h4>
 		<p>
-			<h6 class="text-muted font-weight-normal">Em 99/09/9999 - 00:00 até 99:00</h6>
+			<h6 class="text-muted font-weight-normal">Em <?php echo $task_date ?></h6> <!-- 99/09/9999 - 00:00 até 99:00 -->
 		</p>
 	</div>
+	<?php 
+        }
+    ?>
 </body>
 </html>

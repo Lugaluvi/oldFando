@@ -18,10 +18,12 @@
         $_SESSION['password']  = $password; 
         $_SESSION['name'] = $reg_user["userName"];
         $_SESSION['lastname'] = $reg_user["userLastname"];
+        $_SESSION['key'] = $reg_user["userKey"];
         
         echo $_SESSION['email'];
         echo $_SESSION['name'];
         echo $_SESSION['lastname'];
+        echo $_SESSION['key'];
 
         header('location:home.php');
     } else {
