@@ -23,7 +23,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-	<link rel="stylesheet" href="../styles/stylex.css">
+	<link rel="stylesheet" href="../styles/styles_fando.css">
 	<link rel="shortcut icon" href="../images/check-solid.svg">
 	<?php
 		$rand = (string) rand(1, 6);
@@ -113,7 +113,7 @@
 		<p>
 			<div class="div-header">
 				<i class="fad fa-tasks fa-2x"></i>
-				<a id="btn-open-task"><i class="fas fa-angle-down fa-2x angle-task"></i></a>
+				<a class="btn-open-task"><i class="fas fa-angle-down fa-2x angle-task"></i></a>
 			</div>
 		</p>
 		<div class="div-header">
@@ -145,9 +145,10 @@
         }
 	?>
 	<script type="text/javascript">
-		$('#btn-open-task').on('click', function() {
-			$('#div-opts-task').slideToggle('fast');
-			$(".angle-task").toggleClass('flip');
+		$('.btn-open-task').on('click', function(){
+			var $this = $(this);
+			$this.closest('.div-tasks').find('.div-opts-task').slideToggle('fast')
+			$this.find(".angle-task").toggleClass('flip');
 		});
 	</script>
 </body>

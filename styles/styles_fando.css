@@ -7,6 +7,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 
 .div-home {
@@ -80,7 +81,6 @@ button {
     border-radius: 5px;
 }
 
-
 .task-important {
     background-color: #bb2205;
     border-radius: 100px;
@@ -118,14 +118,20 @@ button {
     color: #000;
 }
 
+.btn-login {
+    background-color: #262626;
+    color: #FFF;
+}
+
+.btn-login:hover {
+    transition: all ease-in-out .15s;
+    background-color: #141414;
+    color: #FFF;
+}
+
 input:hover {
     transition: all ease-in-out .15s;
     border: 1px solid black;
-}
-
-button[type=submit]:hover {
-    transition: all ease-in-out .20s;
-    background-color: #101010;
 }
 
 .btn-first:hover {

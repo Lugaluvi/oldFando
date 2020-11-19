@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/styles_fando.css">
 	<link rel="shortcut icon" href="images/check-solid.svg">
 	<?php 
 		$rand = (string) rand(1,6);
@@ -55,7 +55,7 @@
 						<small class="form-text text-muted">Suas informações estão seguras conosco.</small>
 				</div>
 				<div class="text-center">
-					<button type="submit">Continuar</button>
+					<button class="btn-login" type="submit">Continuar</button>
 				</div>
 			</form>
 		</div>
@@ -87,7 +87,7 @@
 						<input type="password" name="user_password" placeholder="Insira sua senha" minlength="6" maxlength="150" required>
 				</div>
 				<div class="text-center">
-					<button type="submit">Cadastrar</button>
+					<button class="btn-login" type="submit">Cadastrar</button>
 				</div>
 			</form>
 		</div>
