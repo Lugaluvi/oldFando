@@ -89,7 +89,7 @@
 			</p>
 			<h3><b>Painel de Controle</b></h3>
 			<h6 class="form-text text-muted">Gerencie suas tarefas.</h6>
-			<button class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
+			<button onclick="window.location.href='addTask.php'" class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
 			<div class="form-row text-center">
 				<div class="col">
 					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
