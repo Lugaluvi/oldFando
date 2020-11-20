@@ -9,50 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="../styles/styles_confirm.css">
     <link rel="shortcut icon" href="../images/check-solid.svg">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-        }
-
-        .btn-goBack {
-            background-color: #d9d9d9;
-            color: #000;
-        }
-
-        .btn-goBack:hover {
-            background-color: #b3b3b3;
-            color: #000;
-        }
-
-        .btn-exit {
-            background-color: #262626;
-            color: #FFF;
-        }
-
-        .btn-exit:hover {
-            background-color: #141414;
-            color: #FFF;
-        }
-
-        button {
-            padding: 12px 40px 12px 40px;
-            margin: 8px 0;
-            border: 1px solid white;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            transition: all ease-in-out .15s;
-            background-color: #101010;
-        }
-    </style>
 </head>
 <body>
     <br><br><br><br>
     <p><i class="fad fa-door-open fa-4x"></i></p> 
     <h2><b>Deseja mesmo sair?</b></h2>
-    <button onclick="window.location.href='home.php'" class="btn-goBack">Voltar</button>&nbsp&nbsp
-    <button onclick="window.location.href='endSession.php'" class="btn-exit" type="submit">Sair</button>
+    <button onclick="window.location.href='../menus/homeScreen.php'" class="button-primary">Voltar</button>&nbsp&nbsp
+    <button onclick="window.location.href='../functions/endSession.php'" class="button-secondary" type="submit">Sair</button>
 </html>

@@ -10,26 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="shortcut icon" href="../images/check-solid.svg">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-        }
-
-        button[type=submit] {
-            padding: 12px 40px 12px 40px;
-            margin: 8px 0;
-            background-color: #262626;
-            color: white;
-            border: 1px solid white;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            transition: all ease-in-out .15s;
-            background-color: #101010;
-        }
-    </style>
+	<link rel="stylesheet" href="../styles/styles_confirm.css">
 </head>
 <body>
     <form action="../index.php">
@@ -37,7 +18,6 @@
         <p><i class="fad fa-user-plus fa-4x"></i></p> 
         <h2><b>Usuário criado!</b></h2>
         <h6 class="form-text text-muted">Faça seu login para continuar.</h6>
-        <button type="submit">Continuar</button>
+        <button class="button-secondary" type="submit">Continuar</button>
     </form>
-    
 </html>

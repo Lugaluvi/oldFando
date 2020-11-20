@@ -44,7 +44,7 @@
 			<h2><b>Faça seu login</b></h2>
 			<h6 class="form-text text-muted">Para acessar sua lista de tarefas.</h6>
 			<br>
-			<form method="POST" action="menus/userValidation.php">
+			<form method="POST" action="functions/userValidation.php">
 				<div class="form-group">
 						<label for="user_email"><b>E-mail</b></label><br>
 						<input type="email" name="user_email" placeholder="Insira seu email" required>
@@ -65,7 +65,7 @@
 			<h2><b>Cadastre-se</b></h2>
 			<h6 class="form-text text-muted">Comece a organizar o seu dia agora mesmo!</h6>
 			<br>
-			<form method="POST" action="menus/userInclude.php">
+			<form method="POST" action="management/userInclude.php">
 				<div class="form-row">
 					<div class="col">
 						<label for="user_name"><b>Nome</b></label>

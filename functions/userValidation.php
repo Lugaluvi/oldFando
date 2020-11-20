@@ -6,10 +6,10 @@
     $email = $_POST['user_email'];
     $password = $_POST['user_password'];
     
-    include '../conexao.php';
+    include '../connection.php';
     
     $queryResult = "SELECT * FROM users WHERE userEmail = '$email' and userPassword = '$password'";
-    $userResult = mysqli_query($conexao, $queryResult);
+    $userResult = mysqli_query($connection, $queryResult);
         
     if(mysqli_num_rows ($userResult) > 0 ) { 
         $reg_user = mysqli_fetch_array($userResult);
@@ -25,10 +25,10 @@
         echo $_SESSION['lastname'];
         echo $_SESSION['key'];
 
-        header('location:home.php');
+        header('location:../menus/homeScreen.php');
     } else {
         unset ($_SESSION['login']); 
         unset ($_SESSION['senha']);
-        echo"<script>window.location='userInvalid.php'</script>";
+        header('location:../errors/userInvalid.php');
     }    
 ?>

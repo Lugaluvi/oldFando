@@ -29,9 +29,9 @@
 		$rand = (string) rand(1, 6);
 		$image_rand = "../images/fundo" . $rand . ".jpg";
 
-		include '../conexao.php';
+		include '../connection.php';
 		$tasks = "select * from tabela_$key";
-		$query_tasks = mysqli_query($conexao, $tasks);
+		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
 
