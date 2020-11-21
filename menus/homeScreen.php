@@ -30,7 +30,7 @@
 		$image_rand = "../images/fundo" . $rand . ".jpg";
 
 		include '../connection.php';
-		$tasks = "select * from tabela_$key";
+		$tasks = "select * from table_$key order by isImportant desc, taskDate";
 		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
@@ -102,7 +102,7 @@
 	</div>
 	<?php
 		while ($user_tasks = mysqli_fetch_array($query_tasks)) {
-			$task_name = $user_tasks["taskName"];
+			$task_title = $user_tasks["taskTitle"];
 			$task_desc = $user_tasks["taskDesc"];
 			$task_createDate = $user_tasks["taskCreateDate"];
 			$task_date = $user_tasks["taskDate"];
@@ -112,16 +112,21 @@
 	<div class="shadow p-4 mb-3 div-home div-tasks div-dark-mode">
 		<p>
 			<div class="div-header">
-				<i class="fad fa-tasks fa-2x"></i>
+				<i class="fad fa-<?php echo $task_icon ?> fa-2x"></i>
 				<a class="btn-open-task"><i class="fas fa-angle-down fa-2x angle-task"></i></a>
 			</div>
 		</p>
-		<div class="div-header">
-			<div class="task-important"></div>
-		</div>
+		<?php
+			if ($task_important == 1) {
+				echo "
+				<div class='div-header'>
+					<div class='task-important'></div>
+				</div>";
+			}
+		?>
 		<div class="div-opts-task" id="div-opts-task">
 			<br>
-			<h6 class="text-muted font-weight-light">Criada em <?php echo $task_createDate ?> </h6> <!-- 99/09/9999 às 00:00 -->
+		<h6 class="text-muted font-weight-light">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate)) ?> </h6>
 			<div class="form-row text-center">
 				<div class="col">
 					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
@@ -136,9 +141,9 @@
 			<hr>
 		</div>
 		</p>
-		<h4><b><?php echo $task_name ?></b></h4>
+		<h4><b><?php echo $task_title ?></b></h4>
 		<p>
-			<h6 class="text-muted font-weight-normal">Em <?php echo $task_date ?></h6> <!-- 99/09/9999 - 00:00 até 99:00 -->
+			<h6 class="text-muted font-weight-normal">Em <?php echo date('d/m/Y - H:i',strtotime($task_date)) ?></h6>
 		</p>
 	</div>
 	<?php 

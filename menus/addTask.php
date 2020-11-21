@@ -18,7 +18,7 @@
     <h2><b>Criar tarefa</b></h2>
     <h6 class="form-text text-muted">Preencha os dados abaixo para criar a tarefa.</h6>
     <br>
-    <form method="POST" action="menus/userInclude.php">
+    <form method="POST" action="../management/taskInclude.php">
         <div class="form-group">
             <label for="task_title"><b>Título da tarefa</b></label>
             <input type="text" name="task_title" placeholder="Insira o título" maxlength="150" required>
@@ -27,22 +27,38 @@
             <label for="task_desc"><b>Descrição da tarefa (opcional)</b></label>
             <textarea class="textarea" name="task_desc" rows="2" placeholder="Insira uma descrição" maxlength="250" required></textarea>
         </div>
-        <div class="form-group">
-            <label for="task_date"><b>Data e hora de início da tarefa</b></label>
-            <input type="datetime-local" name="task_date" required>
+        <div class="form-row">
+            <div class="col">
+                <label for="task_date"><b>Inícia em</b></label>
+                <input type="datetime-local" name="task_date_start" required>
+            </div>
+            <div class="col">
+                <label for="task_date"><b>Termina em</b></label>
+                <input type="datetime-local" name="task_date_finish" required>
+            </div>
         </div>
+        <br>
         <div class="form-row">
             <div class="col">
                 <label for="select"><b>É importante?</b></label>
-                <select class="select" name="select" required>
-                    <option value="0">Sim</option>
-                    <option value="1">Não</option>
+                <select class="select" name="is_important" required>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
                 </select>
             </div>
             <div class="col">
-                <label for="user_lastname"><b>Ícone da tarefa</b></label>
-                <select style="font-family: 'FontAwesome', Poppins;" class="select" name="select" required>
-                    <option value="1">&#xf7e5; Não</option>
+                <label for="select"><b>Etiqueta</b></label>
+                <select class="select" name="task_tag" required>
+                    <option value="tasks">Nenhuma</option>
+                    <option value="exclamation-triangle">Alerta</option>
+                    <option value="apple-alt">Alimentação</option>
+                    <option value="sun">Dia-a-dia</option>
+                    <option value="graduation-cap">Estudos</option>
+                    <option value="user-friends">Encontro</option>
+                    <option value="football-ball">Esporte</option>
+                    <option value="spa">Laser</option>
+                    <option value="bell">Lembrete</option>
+                    <option value="briefcase">Trabalho</option>
                 </select>
             </div>
         </div>
