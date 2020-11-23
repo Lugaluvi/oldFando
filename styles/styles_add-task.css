@@ -9,6 +9,11 @@ body {
     margin: 0px 20px 0px 20px;
 }
 
+a, a:hover{
+    color: inherit; 
+    text-decoration: inherit;
+  }
+
 .btn-goBack {
     background-color: #d9d9d9;
     color: #000;
