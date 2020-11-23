@@ -56,7 +56,7 @@
                     <option value="graduation-cap">Estudos</option>
                     <option value="user-friends">Encontro</option>
                     <option value="football-ball">Esporte</option>
-                    <option value="spa">Laser</option>
+                    <option value="spa">Lazer</option>
                     <option value="bell">Lembrete</option>
                     <option value="briefcase">Trabalho</option>
                 </select>

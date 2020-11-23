@@ -68,7 +68,9 @@
 				<div class="text-center">
 					<div class="form-row text-center">
 						<div class="col">
-							<button class="btn-first btn-dark-first" type="button">&nbsp&nbsp<i class="fad fa-user-edit"></i> &nbspEditar conta&nbsp</button>
+							<form action="userEdit.php">
+								<button class="btn-first btn-dark-first" type="submit">&nbsp&nbsp<i class="fad fa-user-edit"></i> &nbspEditar conta&nbsp</button>
+							</form>
 						</div>
 						<div class="col">
 							<form action="signOut.php">
