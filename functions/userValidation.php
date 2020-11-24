@@ -19,6 +19,7 @@
         $_SESSION['name'] = $reg_user["userName"];
         $_SESSION['lastname'] = $reg_user["userLastname"];
         $_SESSION['key'] = $reg_user["userKey"];
+        $_SESSION['id'] = $reg_user["userID"];
         
         echo $_SESSION['email'];
         echo $_SESSION['name'];
