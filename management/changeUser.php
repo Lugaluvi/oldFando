@@ -32,21 +32,12 @@ $_SESSION['lastname'] = $new_lname;
 $keyQuery = "SELECT * FROM users WHERE userID = '$id'";
 $keyResult = mysqli_query($connection, $keyQuery);
 
-// echo "<pre>";
-// var_dump($_SESSION);
-// var_dump($_POST);
-// echo ($id);
-// echo($keyResult);
-// echo "</pre>";
-
-
 if(mysqli_num_rows($keyResult) > 0){
     $reg_user = mysqli_fetch_array($keyResult);
 
     $_SESSION['key'] = $reg_user['userKey'];
     $_SESSION['id'] = $reg_user['userID'];
 }
-
 
 header('location:../menus/userChanged.php');
 
