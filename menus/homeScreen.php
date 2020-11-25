@@ -30,7 +30,7 @@
 		$image_rand = "../images/fundo" . $rand . ".jpg";
 
 		include '../connection.php';
-		$tasks = "select * from table_$key order by isImportant desc, taskDate";
+		$tasks = "select * from table_$key order by isImportant desc, taskCreateDate";
 		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
@@ -94,10 +94,14 @@
 			<button onclick="window.location.href='addTask.php'" class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
 			<div class="form-row text-center">
 				<div class="col">
-					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
+					<form method="POST" action="homeScreen.php">
+						<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
+					</form>
 				</div>
 				<div class="col">
-					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar todas</button>
+					<form action="taskDelete.php">
+						<button class="btn-second btn-dark-second" type="submit"><i class="fad fa-trash"></i> &nbspDeletar todas</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -107,7 +111,8 @@
 			$task_title = $user_tasks["taskTitle"];
 			$task_desc = $user_tasks["taskDesc"];
 			$task_createDate = $user_tasks["taskCreateDate"];
-			$task_date = $user_tasks["taskDate"];
+			$task_date_start = $user_tasks["taskDateStart"];
+			$task_date_finish = $user_tasks["taskDateFinish"];
 			$task_important = $user_tasks["isImportant"];
 			$task_icon = $user_tasks["taskIcon"];
     ?>
@@ -127,7 +132,7 @@
 			}
 		?>
 		<div class="div-opts-task" id="div-opts-task">
-			<br>
+		<br>
 		<h6 class="text-muted font-weight-light">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate)) ?> </h6>
 			<div class="form-row text-center">
 				<div class="col">
@@ -145,7 +150,7 @@
 		</p>
 		<h4><b><?php echo $task_title ?></b></h4>
 		<p>
-			<h6 class="text-muted font-weight-normal">Em <?php echo date('d/m/Y - H:i',strtotime($task_date)) ?></h6>
+			<h6 class="text-muted font-weight-normal">Em <?php echo date('d/m/Y - H:i',strtotime($task_date_start)) ?> até <?php echo date('d/m/Y - H:i',strtotime($task_date_finish)) ?></h6>
 		</p>
 	</div>
 	<?php 

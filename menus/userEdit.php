@@ -19,13 +19,12 @@
 		$name = $_SESSION['name'];
 		$lastName = $_SESSION['lastname'];
         $password = $_SESSION['password'];
-
 	?>
 </head>
 <body>
     <br><br>
     <p><i class="fad fa-user-edit fa-3x"></i></p> 
-    <h2><b>Editar sua conta</b></h2>
+    <h2><b>Editar conta</b></h2>
     <h6 class="form-text text-muted">Preencha as informações abaixo para editar sua conta.</h6>
     <br>
     <form method="POST" action="../management/changeUser.php">
@@ -39,6 +38,7 @@
                 <input type="text" name="user_lname" value="<?php echo $lastName?>" maxlength="150" required>
             </div>
         </div>
+        <br>
         <div class="form-group">
             <label for="user_email"><b>E-mail</b></label>
             <input type="text" name="user_email" value="<?php echo $email?>" maxlength="150" required>
