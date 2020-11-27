@@ -48,7 +48,10 @@
             <input type="password" name="user_password" value="<?php echo $password?>" maxlength="150" required>
         </div>
         <br>
-        <button type="submit" class="btn-exit" type="submit">Salvar</button>
-        <button onclick="window.location.href='../menus/homeScreen.php'" class="btn-goBack"><a href="../menus/homeScreen.php">Cancelar</a></button>&nbsp&nbsp
+        <button type="submit" class="btn-exit">Salvar</button>
     </form>
+    <hr>
+    <button onclick="window.location.href='../menus/homeScreen.php'" class="btn-goBack">Voltar</button>&nbsp&nbsp
+    <button onclick="window.location.href='../menus/deleteUser.php'" class="btn-alert"><i class="fad fa-trash"></i> &nbspApagar Conta</button>
+    <br><br>
 </html>

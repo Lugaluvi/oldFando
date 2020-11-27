@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sair? | Fando</title>
+    <title>Deletar todas as tarefas | Fando</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -15,8 +15,9 @@
 </head>
 <body>
     <br><br><br><br>
-    <p><i class="fad fa-door-open fa-4x"></i></p> 
-    <h2><b>Deseja mesmo sair?</b></h2>
-    <button onclick="window.location.href='../menus/homeScreen.php'" class="button-primary">Voltar</button>&nbsp&nbsp
-    <button onclick="window.location.href='../functions/endSession.php'" class="button-secondary" type="submit">Sair</button>
+    <p><i class="fad fa-trash fa-4x"></i></p> 
+    <h2><b>Deseja mesmo deletar todas as tarefas?</b></h2>
+    <h6 class="form-text text-muted">Essa ação não pode ser desfeita.</h6>
+    <button onclick="window.location.href='../menus/homeScreen.php'" class="button-primary">Não</button>&nbsp&nbsp
+    <button onclick="window.location.href='../management/deleteTasks.php'" class="button-secondary" type="submit">Sim</button>
 </html>

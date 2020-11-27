@@ -108,6 +108,11 @@ button {
     color: #383838;
 }
 
+.btn-exit-modal {
+    background-color: #262626;
+    width: 120px;
+}
+
 .btn-create-task {
     background-color: #262626;
 }
@@ -152,6 +157,11 @@ input:hover {
 }
 
 .btn-create-task:hover {
+    transition: all ease-in-out .20s;
+    background-color: black;
+}
+
+.btn-exit-modal:hover {
     transition: all ease-in-out .20s;
     background-color: black;
 }
