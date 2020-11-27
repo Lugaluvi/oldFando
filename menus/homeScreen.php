@@ -107,7 +107,9 @@
 		</div>
 	</div>
 	<?php
+		$i = 0;
 		while ($user_tasks = mysqli_fetch_array($query_tasks)) {
+			$i++;
 			$task_title = $user_tasks["taskTitle"];
 			$task_desc = $user_tasks["taskDesc"];
 			$task_createDate = $user_tasks["taskCreateDate"];
@@ -139,7 +141,7 @@
 					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
 				</div>
 				<div class="col">
-					<button class="btn-third btn-dark-third" type="button" data-toggle="modal" data-target="#taskModal"><i class="fad fa-eye"></i> &nbspExpandir</button>
+					<button class="btn-third btn-dark-third" type="button" data-toggle="modal" data-target="#taskModal<?php echo $i; ?>"><i class="fad fa-eye"></i> &nbspExpandir</button>
 				</div>
 				<div class="col">
 					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
@@ -150,26 +152,25 @@
 		</p>
 		<h4><b><?php echo $task_title ?></b></h4>
 		<p>
-			<h6 class="text-muted font-weight-normal">Em <?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?> até <?php echo date('d/m/Y - H:i',strtotime($task_dateFinish)) ?></h6>
+			<h6 class="text-muted font-weight-normal"><b>Em</b> <?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?> <b>até</b> <?php echo date('d/m/Y - H:i',strtotime($task_dateFinish)) ?></h6>
 		</p>
-		<div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
+		<div class="modal fade" id="taskModal<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title" id="taskModalLabel"><b>Informações da tarefa<b></h4>
-					</div>
 					<div class="modal-body">
-						<?php
-							echo $task_title;
-							echo $task_desc;
-							echo $task_createDate; 
-							echo $task_dateStart;
-							echo $task_dateFinish;
-							echo $task_important;
-							echo $task_icon;
-						?>
-					</div>
-					<div class="modal-footer">
+						<h4 class="modal-title"><b>Informações da tarefa<b></h4>
+						<h6 class="form-text text-muted"><?php echo $task_title; ?></h6>
+						<h6 class="text-muted font-weight-normal">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate))?></h6>
+						<br>
+						<h6><b>Descrição</b></h6>
+						<h6 class="text-muted font-weight-normal"><?php echo $task_desc; ?></h6>
+						<br>
+						<h6><b>Inicia em</b></h6>
+						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?></h6>
+						<br>
+						<h6><b>Termina em</b></h6>
+						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateFinish)) ?></h6>
+						<hr>
 						<button type="button" class="btn-exit-modal" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>
@@ -177,7 +178,7 @@
 		</div>
 	</div>
 	<?php 
-        }
+		}
 	?>
 	<script type="text/javascript">
 		$('.btn-open-task').on('click', function(){
