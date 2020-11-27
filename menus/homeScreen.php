@@ -179,6 +179,9 @@
 	</div>
 	<?php 
 		}
+		if ($user_tasks < 1) {
+			echo "soçjdlsdfjldlçsfs";
+		}
 	?>
 	<script type="text/javascript">
 		$('.btn-open-task').on('click', function(){
