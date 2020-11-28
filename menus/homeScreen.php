@@ -18,6 +18,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Minhas Tarefas | Fando</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -94,12 +96,10 @@
 			<button onclick="window.location.href='addTask.php'" class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
 			<div class="form-row text-center">
 				<div class="col">
-					<form method="POST" action="homeScreen.php">
-						<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
-					</form>
+					<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
 				</div>
 				<div class="col">
-					<form action="taskDelete.php">
+					<form action="taskDeleteAll.php">
 						<button class="btn-second btn-dark-second" type="submit"><i class="fad fa-trash"></i> &nbspDeletar todas</button>
 					</form>
 				</div>
@@ -107,12 +107,14 @@
 		</div>
 	</div>
 	<?php
+		$i = 0;
 		while ($user_tasks = mysqli_fetch_array($query_tasks)) {
+			$i++;
 			$task_title = $user_tasks["taskTitle"];
 			$task_desc = $user_tasks["taskDesc"];
 			$task_createDate = $user_tasks["taskCreateDate"];
-			$task_date_start = $user_tasks["taskDateStart"];
-			$task_date_finish = $user_tasks["taskDateFinish"];
+			$task_dateStart = $user_tasks["taskDateStart"];
+			$task_dateFinish = $user_tasks["taskDateFinish"];
 			$task_important = $user_tasks["isImportant"];
 			$task_icon = $user_tasks["taskIcon"];
     ?>
@@ -139,7 +141,7 @@
 					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
 				</div>
 				<div class="col">
-					<button class="btn-third btn-dark-third" type="button"><i class="fad fa-eye"></i> &nbspExpandir</button>
+					<button class="btn-third btn-dark-third" type="button" data-toggle="modal" data-target="#taskModal<?php echo $i; ?>"><i class="fad fa-eye"></i> &nbspExpandir</button>
 				</div>
 				<div class="col">
 					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
@@ -150,11 +152,36 @@
 		</p>
 		<h4><b><?php echo $task_title ?></b></h4>
 		<p>
-			<h6 class="text-muted font-weight-normal">Em <?php echo date('d/m/Y - H:i',strtotime($task_date_start)) ?> até <?php echo date('d/m/Y - H:i',strtotime($task_date_finish)) ?></h6>
+			<h6 class="text-muted font-weight-normal"><b>Em</b> <?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?> <b>até</b> <?php echo date('d/m/Y - H:i',strtotime($task_dateFinish)) ?></h6>
 		</p>
+		<div class="modal fade" id="taskModal<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4 class="modal-title"><b>Informações da tarefa<b></h4>
+						<h6 class="form-text text-muted"><?php echo $task_title; ?></h6>
+						<h6 class="text-muted font-weight-normal">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate))?></h6>
+						<br>
+						<h6><b>Descrição</b></h6>
+						<h6 class="text-muted font-weight-normal"><?php echo $task_desc; ?></h6>
+						<br>
+						<h6><b>Inicia em</b></h6>
+						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?></h6>
+						<br>
+						<h6><b>Termina em</b></h6>
+						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateFinish)) ?></h6>
+						<hr>
+						<button type="button" class="btn-exit-modal" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<?php 
-        }
+		}
+		if ($user_tasks < 1) {
+			echo "soçjdlsdfjldlçsfs";
+		}
 	?>
 	<script type="text/javascript">
 		$('.btn-open-task').on('click', function(){

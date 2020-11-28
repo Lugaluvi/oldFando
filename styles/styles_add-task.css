@@ -24,6 +24,17 @@ a, a:hover{
     color: #000;
 }
 
+.btn-alert {
+    background-color: #ec524b;
+    color: #FFF;
+    justify-content: flex-end;
+}
+
+.btn-alert:hover {
+    background-color: #c4463f;
+    color: #FFF;
+}
+
 .btn-exit {
     background-color: #262626;
     color: #FFF;

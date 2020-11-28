@@ -42,6 +42,7 @@
             <div class="col">
                 <label for="select"><b>É importante?</b></label>
                 <select class="select" name="is_important" required>
+                    <option value="0">Selecione</option>
                     <option value="1">Sim</option>
                     <option value="0">Não</option>
                 </select>
@@ -63,7 +64,7 @@
             </div>
         </div>
         <br>
+        <button type="submit" class="btn-exit">Criar</button>
         <button onclick="window.location.href='../menus/homeScreen.php'" class="btn-goBack">Voltar</button>&nbsp&nbsp
-        <button type="submit" class="btn-exit" type="submit">Criar</button>
     </form>
 </html>
