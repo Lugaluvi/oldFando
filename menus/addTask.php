@@ -42,6 +42,7 @@
             <div class="col">
                 <label for="select"><b>É importante?</b></label>
                 <select class="select" name="is_important" required>
+                    <option value="0">Selecione</option>
                     <option value="1">Sim</option>
                     <option value="0">Não</option>
                 </select>
