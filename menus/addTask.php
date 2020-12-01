@@ -64,7 +64,7 @@
             </div>
         </div>
         <br>
-        <button type="submit" class="btn-exit">Criar</button>
         <button onclick="window.location.href='../menus/homeScreen.php'" class="btn-goBack">Voltar</button>&nbsp&nbsp
+        <button type="submit" class="btn-exit">Criar</button>
     </form>
 </html>
