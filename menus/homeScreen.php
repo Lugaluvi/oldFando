@@ -117,6 +117,7 @@
 			$task_dateFinish = $user_tasks["taskDateFinish"];
 			$task_important = $user_tasks["isImportant"];
 			$task_icon = $user_tasks["taskIcon"];
+			$task_id = $user_tasks["taskID"]
     ?>
 	<div class="shadow p-4 mb-3 div-home div-tasks div-dark-mode">
 		<p>
@@ -144,7 +145,12 @@
 					<button class="btn-third btn-dark-third" type="button" data-toggle="modal" data-target="#taskModal<?php echo $i; ?>"><i class="fad fa-eye"></i> &nbspExpandir</button>
 				</div>
 				<div class="col">
-					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
+					<form action="deleteTask.php" method="POST">
+
+						<button class="btn-second btn-dark-second" type="submit" name="taskname" value="<?php echo $task_title?>"><i class="fad fa-trash"></i> &nbspDeletar</button>
+						<input type=hidden name="taskid" value="<?php echo $task_id?>">
+
+					</form>
 				</div>
 			</div>
 			<hr>
@@ -180,7 +186,7 @@
 	<?php 
 		}
 		if ($user_tasks < 1) {
-			echo "soçjdlsdfjldlçsfs";
+			
 		}
 	?>
 	<script type="text/javascript">
