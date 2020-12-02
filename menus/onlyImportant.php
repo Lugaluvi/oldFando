@@ -16,7 +16,7 @@
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Minhas Tarefas | Fando</title>
+	<title>Minhas Tarefas Importantes | Fando</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -29,10 +29,10 @@
 	<link rel="shortcut icon" href="../images/check-solid.svg">
 	<?php
 		$rand = (string) rand(1, 6);
-		$image_rand = "../images/fundo" . $rand . ".jpg";
+        $image_rand = "../images/fundo" . $rand . ".jpg";
+        include '../connection.php';
 
-		include '../connection.php';
-		$tasks = "select * from table_$key order by isImportant desc, taskCreateDate";
+		$tasks = "select * from table_$key where isImportant = 1 order by taskCreateDate";
 		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
@@ -44,7 +44,7 @@
 			</p>
 			<p><i class="fad fa-check fa-3x"></i></p>
 			<h2><b>Olá, <?php echo $name, " ", $lastName; ?></b></h2>
-			<h6 class="form-text text-muted">Boas-vindas a sua lista de tarefas.</h6>
+			<h6 class="form-text text-muted">Boas-vindas a sua lista de tarefas importantes.</h6>
 			<br>
 			<div class="div-header">
 				<h5><b>Opções de conta<b></h5>
@@ -98,13 +98,8 @@
 			<button onclick="window.location.href='addTask.php'" class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
 			<div class="form-row text-center">
 				<div class="col">
-					<form action="onlyImportant.php">
-						<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
-					</form>
-				</div>
-				<div class="col">
-					<form action="taskDeleteAll.php">
-						<button class="btn-second btn-dark-second" type="submit"><i class="fad fa-trash"></i> &nbspDeletar todas</button>
+					<form action="homeScreen.php">
+						<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-thumbtack"></i> &nbspExibir todas</button>
 					</form>
 				</div>
 			</div>

@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="shortcut icon" href="../images/check-solid.svg">
     <link rel="stylesheet" href="../styles/styles_add-task.css">
-
     <?php
 		session_start();
 
@@ -51,7 +50,9 @@
         <button type="submit" class="btn-exit">Salvar</button>
     </form>
     <hr>
-    <button onclick="window.location.href='../menus/homeScreen.php'" class="btn-goBack">Voltar</button>&nbsp&nbsp
+    <br>
+    <h3><b>Apagar Conta</b></h3>
+    <h6 class="form-text text-muted">Se preferir, você pode encerrar sua conta e apagar todos os seus dados.</h6>
     <button onclick="window.location.href='../menus/deleteUser.php'" class="btn-alert"><i class="fad fa-trash"></i> &nbspApagar Conta</button>
     <br><br>
 </html>

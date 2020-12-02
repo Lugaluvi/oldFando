@@ -166,6 +166,15 @@ input:hover {
     background-color: black;
 }
 
+.modal-button {
+    width: 120px;
+}
+
+.modal-textarea {
+    width: 100%;
+    border: 0;
+}
+
 /* -- DARK MODE --*/
 
 .dark-mode {
@@ -179,20 +188,20 @@ input:hover {
 }
 
 .dark-create-task {
-    background-color: #262626;
-    border: 2px solid;
+    background-color: #FFF;
     border-color: #FFF;
-    color: #FFF;
+    border: 2px solid;
+    color: #262626;
 }
 
 .dark-create-task:hover {
     transition: all ease-in-out .20s;
-    background-color: #FFF;
-    color: #262626;
+    border-color: rgb(224, 224, 224);
+    background-color: rgb(224, 224, 224);
+    color: #000;
 }
 
 .dark-first {
-    opacity: 1;
     background-color: #79b6ce;
     border: 2px solid;
     border-color: #79b6ce;
@@ -229,4 +238,13 @@ input:hover {
     transition: all ease-in-out .20s;
     background-color: #FFF;
     color: #262626;
+}
+
+.dark-modal {
+    background-color: #262626;
+    color: #FFF;
+}
+
+.dark-modal-textarea {
+    background-color: #262626;
 }
