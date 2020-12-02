@@ -32,7 +32,7 @@
 		$image_rand = "../images/fundo" . $rand . ".jpg";
 
 		include '../connection.php';
-		$tasks = "select * from table_$key order by isImportant desc, taskCreateDate";
+		$tasks = "select * from table_$key order by isImportant desc, taskDateStart";
 		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
@@ -121,6 +121,7 @@
 				<h4><b>Você não possui nenhuma tarefa criada. </b></h4>
 				<h6 class='form-text text-muted'>Use as opções ao lado para criar ou filtrar tarefas.</h6>
 			</div>
+			<br>
 			";
 		};
 
@@ -184,8 +185,8 @@
 						<h6 class="text-muted font-weight-normal">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate))?></h6>
 						<br>
 						<h6><b>Descrição</b></h6>
-						<textarea class="text-muted font-weight-normal modal-textarea" rows="2"><?php echo $task_desc; ?></textarea>
-						<br><br>
+						<h6 class="text-muted font-weight-normal"><?php echo $task_desc; ?></h6>
+						<br>
 						<h6><b>Inicia em</b></h6>
 						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?></h6>
 						<br>

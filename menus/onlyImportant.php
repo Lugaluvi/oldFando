@@ -32,7 +32,7 @@
         $image_rand = "../images/fundo" . $rand . ".jpg";
         include '../connection.php';
 
-		$tasks = "select * from table_$key where isImportant = 1 order by taskCreateDate";
+		$tasks = "select * from table_$key where isImportant = 1 order by taskDateStart";
 		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
@@ -113,7 +113,7 @@
 				</p>
 				<img class='img-fluid' src='../images/sem_tarefas.png' width='250' alt='Imagem sem tarefas'></img>
 				<br><br>
-				<h4><b>Você não possui nenhuma tarefa criada. </b></h4>
+				<h4><b>Você não possui tarefas importantes. </b></h4>
 				<h6 class='form-text text-muted'>Use as opções ao lado para criar ou filtrar tarefas.</h6>
 			</div>
 			";
