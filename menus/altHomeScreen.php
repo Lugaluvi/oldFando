@@ -30,16 +30,11 @@
 	<?php
 		error_reporting(0);
 		$rand = (string) rand(1, 6);
-		$image_rand = "../images/fundo" . $rand . ".jpg";
-		$onlyImportant = $_POST['only_important'];
+        $image_rand = "../images/fundo" . $rand . ".jpg";
+        include '../connection.php';
 
-		include '../connection.php';
-		if ($onlyImportant == "only_important") {
-			$tasks = "select * from table_$key where isImportant = 1 order by taskCreateDate";
-		} else {
-			$tasks = "select * from table_$key order by isImportant desc, taskCreateDate";
-		}
-		
+        //$tasks = "select * from table_$key order by isImportant desc, taskCreateDate";
+		$tasks = "select * from table_$key where isImportant = 1 order by taskCreateDate";
 		$query_tasks = mysqli_query($connection, $tasks);
 	?>
 </head>
@@ -70,6 +65,8 @@
 							$(".btn-dark-third").toggleClass('dark-third');
 							$(".btn-create-task").toggleClass('dark-create-task');
 							$("hr").toggleClass('dark-hr');
+							$(".modal-content").toggleClass('dark-modal');
+							$(".modal-textarea").toggleClass('dark-modal-textarea');
 						});
 					</script>
 				</div>
@@ -103,29 +100,20 @@
 			<button onclick="window.location.href='addTask.php'" class="btn-create-task" type="button"><i class="fad fa-check"></i> &nbspCriar Tarefa</button>
 			<div class="form-row text-center">
 				<div class="col">
-					<form method="POST" action="altHomeScreen.php">
-						<button class="btn_important" class="btn-first btn-dark-first" name="only_important" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspSó Importantes</button>
-
 						<?php
-						/* 
-						
-						Tentativa de validação se existe ou não uma tarefa importante pra enviar o usuário para a página de erro TaskProblem.
-
-							$Query = "select isImportant from table_$key where isImportant = 1";
-							$Query_important = mysqli_query($connection, $Query);
-
-							$cont_important = $Query_important->num_rows;
-
-							if ($cont_important == 0){
-								
-							} else {
-
-							}
-
-						*/
+							if ($onlyImportant == null) {
 						?>
-
-					</form>
+							<form method="POST" action="homeScreen.php">
+							<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspExibir todas</button>
+							</form>
+						<?php
+							} else {
+						?>
+							<script>return false</script>
+							<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-exclamation-circle"></i> &nbspExibir todas</button>
+						<?php
+							}
+						?>
 				</div>
 				<div class="col">
 					<form action="taskDeleteAll.php">
@@ -136,9 +124,27 @@
 		</div>
 	</div>
 	<?php
+		//echo $query_tasks; 
 		$i = 0;
+		if ($query_tasks > 1) {
+			echo "
+			<div class='shadow p-4 mb-2 div-home div-dark-mode'>
+				</p>
+				<h3><b>Painel de Controle</b></h3>
+				<h6 class='form-text text-muted'>Gerencie suas tarefas.</h6>
+				<button onclick='window.location.href='addTask.php'' class='btn-create-task' type='button'><i class='fad fa-check'></i> &nbspCriar Tarefa</button>
+				<div class='form-row text-center'>
+					<div class='col'>
+						<button class='btn-first btn-dark-first' type='submit'><i class='fad fa-exclamation-circle'></i> &nbspSó Importantes</button>
+					</div>
+				</div>
+			</div>
+			";
+		};
+
 		while ($user_tasks = mysqli_fetch_array($query_tasks)) {
 			$i++;
+			$task_id = $user_tasks["taskID"];
 			$task_title = $user_tasks["taskTitle"];
 			$task_desc = $user_tasks["taskDesc"];
 			$task_createDate = $user_tasks["taskCreateDate"];
@@ -146,21 +152,6 @@
 			$task_dateFinish = $user_tasks["taskDateFinish"];
 			$task_important = $user_tasks["isImportant"];
 			$task_icon = $user_tasks["taskIcon"];
-			// if ($user_tasks > 1) {
-			// 	echo "
-			// 	<div class='shadow p-4 mb-2 div-home div-dark-mode'>
-			// 		</p>
-			// 		<h3><b>Painel de Controle</b></h3>
-			// 		<h6 class='form-text text-muted'>Gerencie suas tarefas.</h6>
-			// 		<button onclick='window.location.href='addTask.php'' class='btn-create-task' type='button'><i class='fad fa-check'></i> &nbspCriar Tarefa</button>
-			// 		<div class='form-row text-center'>
-			// 			<div class='col'>
-			// 				<button class='btn-first btn-dark-first' type='submit'><i class='fad fa-exclamation-circle'></i> &nbspSó Importantes</button>
-			// 			</div>
-			// 		</div>
-			// 	</div>
-			// 	";
-			// };
     ?>
 	<div class="shadow p-4 mb-3 div-home div-tasks div-dark-mode">
 		<p>
@@ -182,13 +173,17 @@
 		<h6 class="text-muted font-weight-light">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate)) ?> </h6>
 			<div class="form-row text-center">
 				<div class="col">
-					<button class="btn-first btn-dark-first" type="button"><i class="fad fa-edit"></i> &nbspEditar</button>
+					<form method="POST" action="taskEdit.php?id=<?php echo $task_id ?>">
+						<button class="btn-first btn-dark-first" type="submit"><i class="fad fa-edit"></i> &nbspEditar</button>
+					</form>
 				</div>
 				<div class="col">
 					<button class="btn-third btn-dark-third" type="button" data-toggle="modal" data-target="#taskModal<?php echo $i; ?>"><i class="fad fa-eye"></i> &nbspExpandir</button>
 				</div>
 				<div class="col">
-					<button class="btn-second btn-dark-second" type="button"><i class="fad fa-trash"></i> &nbspDeletar</button>
+					<form method="POST" action="taskDelete.php?id=<?php echo $task_id ?>">
+						<button class="btn-second btn-dark-second" type="submit"><i class="fad fa-trash"></i> &nbspDeletar</button>
+					</form>
 				</div>
 			</div>
 			<hr>
@@ -203,19 +198,19 @@
 				<div class="modal-content">
 					<div class="modal-body">
 						<h4 class="modal-title"><b>Informações da tarefa<b></h4>
-						<h6 class="form-text text-muted"><?php echo $task_title; ?></h6>
+						<h6 class="form-text"><b>Tarefa #<?php echo $task_id; ?></b> - <?php echo $task_title; ?></h6>
 						<h6 class="text-muted font-weight-normal">Criada em <?php echo date('d/m/Y - H:i',strtotime($task_createDate))?></h6>
 						<br>
 						<h6><b>Descrição</b></h6>
-						<h6 class="text-muted font-weight-normal"><?php echo $task_desc; ?></h6>
-						<br>
+						<textarea class="text-muted font-weight-normal modal-textarea" rows="2"><?php echo $task_desc; ?></textarea>
+						<br><br>
 						<h6><b>Inicia em</b></h6>
 						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateStart)) ?></h6>
 						<br>
 						<h6><b>Termina em</b></h6>
 						<h6 class="text-muted font-weight-normal"><?php echo date('d/m/Y - H:i',strtotime($task_dateFinish)) ?></h6>
 						<hr>
-						<button type="button" class="btn-exit-modal" data-dismiss="modal">Fechar</button>
+						<button type="button" class="btn-third btn-dark-third modal-button" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>
 			</div>
