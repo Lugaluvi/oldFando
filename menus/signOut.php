@@ -17,6 +17,7 @@
     <br><br><br><br>
     <p><i class="fad fa-door-open fa-4x"></i></p> 
     <h2><b>Deseja mesmo sair?</b></h2>
+    <h6 class="form-text text-muted">Fica, vai ter bolo...</h6>
     <button onclick="window.location.href='../menus/homeScreen.php'" class="button-primary">Voltar</button>&nbsp&nbsp
     <button onclick="window.location.href='../functions/endSession.php'" class="button-secondary" type="submit">Sair</button>
 </html>
