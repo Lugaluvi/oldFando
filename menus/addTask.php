@@ -29,7 +29,7 @@
         </div>
         <div class="form-row">
             <div class="col">
-                <label for="task_date"><b>Inícia em</b></label>
+                <label for="task_date"><b>Inicia em</b></label>
                 <input type="datetime-local" name="task_date_start" required>
             </div>
             <div class="col">
