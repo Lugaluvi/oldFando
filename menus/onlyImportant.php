@@ -107,6 +107,17 @@
 	</div>
 	<?php
 		$i = 0;
+		if ($query_tasks->num_rows < 1) {
+			echo "
+			<div class='shadow p-4 mb-2 div-home div-dark-mode'>
+				</p>
+				<img class='img-fluid' src='../images/sem_tarefas.png' width='250' alt='Imagem sem tarefas'></img>
+				<br><br>
+				<h4><b>Você não possui nenhuma tarefa criada. </b></h4>
+				<h6 class='form-text text-muted'>Use as opções ao lado para criar ou filtrar tarefas.</h6>
+			</div>
+			";
+		};
 
 		while ($user_tasks = mysqli_fetch_array($query_tasks)) {
 			$i++;
