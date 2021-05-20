@@ -23,3 +23,9 @@ Feito isso, o Fando está pronto!
 # Desenvolvimento
 
 Fando foi desenvlvido utilizando HTML e CSS para telas, estrutura e estilização, assim como PHP para o back-end. Para fins de desenvolvimento, foi utilizado o XAMPP para gestão do MySQL e Servidor Apache.
+
+# To-do
+
+- [x] Perosnalização com ícones.
+- [] Ajustar arquitetura do banco de dados para geração de tarefas.
+- [] Ajustar controle de modo escuro.   
