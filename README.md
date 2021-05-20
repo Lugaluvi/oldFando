@@ -26,6 +26,6 @@ Fando foi desenvlvido utilizando HTML e CSS para telas, estrutura e estilizaçã
 
 # To-do
 
-- [x] Perosnalização com ícones.
-- [ ] Ajustar arquitetura do banco de dados para geração de tarefas.
+- [x] Personalização com ícones.
+- [ ] Ajustar arquitetura do banco de dados para criação de tarefas.
 - [ ] Ajustar controle de modo escuro.   
